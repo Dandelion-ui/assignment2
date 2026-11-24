@@ -31,7 +31,7 @@ public class CarController {
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
 
-            for (Car car : cars){
+            for (Car car : cars) {
                 car.move();
                 int x = (int) Math.round(car.getPosition().getX());
                 int y = (int) Math.round(car.getPosition().getY());
@@ -44,8 +44,8 @@ public class CarController {
             }
             frame.drawPanel.revalidate();
             frame.drawPanel.repaint();
-                }
-            }
+        }
+    }
 
 
     void gas(int amount) {
@@ -55,6 +55,7 @@ public class CarController {
             car.gas(gas);
         }
     }
+
     void brake(int amount) {
 
         double brake = ((double) amount) / 100;
@@ -84,6 +85,22 @@ public class CarController {
     void stopEngine() {
         for (Car car : cars) {
             car.stopEngine();
+        }
+    }
+
+    void turboOn() {
+        for (Car car : cars) {
+            if (car instanceof Saab95 saab) {
+                saab.setTurboOn();
+            }
+        }
+    }
+
+    void turboOff() {
+        for (Car car : cars) {
+            if (car instanceof Saab95 saab) {
+                saab.setTurboOff();
+            }
         }
     }
 }

@@ -118,6 +118,16 @@ public class CarView extends JFrame {
             carC.stopEngine();
         });
 
+        turboOnButton.addActionListener(e -> {
+            carC.turboOn();
+        });
+
+        turboOffButton.addActionListener(e -> {
+            carC.turboOff();
+        });
+
+
+
         // Make the panel layout more compact
         this.pack();
 
