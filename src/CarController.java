@@ -30,26 +30,60 @@ public class CarController {
      */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            /*
-            for (Car car : cars) {
+
+            for (Car car : cars){
                 car.move();
                 int x = (int) Math.round(car.getPosition().getX());
                 int y = (int) Math.round(car.getPosition().getY());
-                frame.drawPanel.moveit(x, y);
-                // repaint() calls the paintComponent method of the panel
-                frame.drawPanel.revalidate();
-                frame.drawPanel.repaint();
+                frame.drawPanel.moveit(car, x, y);
+                if ((x > 800 - 100 || x < 0) || (y > 800 - 240 - 60 || y < 0)) {
+                    car.uTurn();
+                    car.stopEngine();
+                    car.startEngine();
+                }
             }
-             */
-        }
-    }
+            frame.drawPanel.revalidate();
+            frame.drawPanel.repaint();
+                }
+            }
+
 
     void gas(int amount) {
-        /* TODO adapt to your needs
+
         double gas = ((double) amount) / 100;
         for (Car car : cars) {
             car.gas(gas);
         }
-        */
+    }
+    void brake(int amount) {
+
+        double brake = ((double) amount) / 100;
+        for (Car car : cars) {
+            car.brake(brake);
+        }
+    }
+
+    void turnLeft() {
+        for (Car car : cars) {
+            car.turnLeft();
+        }
+    }
+
+    void turnRight() {
+        for (Car car : cars) {
+            car.turnRight();
+        }
+    }
+
+    void startEngine() {
+        for (Car car : cars) {
+            car.startEngine();
+        }
+    }
+
+    void stopEngine() {
+        for (Car car : cars) {
+            car.stopEngine();
+        }
     }
 }

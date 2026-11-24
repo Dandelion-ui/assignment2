@@ -78,6 +78,8 @@ public class CarView extends JFrame {
         controlPanel.add(turboOffButton, 3);
         controlPanel.add(leftButton, 4);
         controlPanel.add(rightButton, 5);
+        controlPanel.add(startButton, 6);
+        controlPanel.add(stopButton, 7);
         controlPanel.setPreferredSize(new Dimension((X/2)+4, 200));
         this.add(controlPanel);
         controlPanel.setBackground(Color.CYAN);
@@ -97,6 +99,23 @@ public class CarView extends JFrame {
         // TODO: Create more for each component as necessary
         gasButton.addActionListener(e -> {
             carC.gas(gasAmount);
+        });
+
+        brakeButton.addActionListener(e -> {
+            carC.brake(gasAmount); });
+
+        leftButton.addActionListener(e -> {
+            carC.turnLeft(); });
+
+        rightButton.addActionListener(e -> {
+            carC.turnRight(); });
+
+        startButton.addActionListener(e -> {
+            carC.startEngine();
+        });
+
+        stopButton.addActionListener(e -> {
+            carC.stopEngine();
         });
 
         // Make the panel layout more compact
