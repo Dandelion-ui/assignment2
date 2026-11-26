@@ -15,9 +15,6 @@ public class DrawPanel extends JPanel {
     BufferedImage saabImage;
     Point saabPoint = new Point();
 
-    ArrayList<Point> carPoints = new ArrayList<>(List.of(volvoPoint, saabPoint));
-
-
     void moveit(Car car, int x, int y) {
         if (car.getModelName() == "Volvo240") {
             volvoPoint.x = x;
@@ -28,7 +25,6 @@ public class DrawPanel extends JPanel {
             saabPoint.y = y;
         }
     }
-
 
 
     // Initializes the panel and reads the images

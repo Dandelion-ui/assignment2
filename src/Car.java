@@ -49,9 +49,6 @@ abstract class Car implements Movable {
             }
         }
 
-    //public void turnRight() {
-    //    this.direction = (this.direction + 1) % 4;
-    //}
 
     public void move() {
         if (this.direction == 0) {
